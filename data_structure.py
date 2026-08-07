@@ -11,7 +11,8 @@ print(user_name[5])"""
 # P y t h o n - i s - a - P r  o  g  r  a  m  m  i  n  g  -  L  a  n  g  u  a  g  e
 print(data[1:8])
 print(data[0:14])
-print(data[-10:-3])
+
+
 print(data[0:14:2])
 print(data[:-6])
 print(data[6:])

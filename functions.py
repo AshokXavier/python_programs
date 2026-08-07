@@ -117,6 +117,7 @@ def student_details():
   print("Student Name: ",name)
 
 student_details()
+
 #print("Student Name: ",name)
 college_name="Carmel" #Global Variable
 def display():

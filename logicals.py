@@ -107,7 +107,22 @@ for i in user_tuple:
     li.append(i)"""
 
 #Not using list
+user_tuple=tuple(map(int,input.split()))
+for i in range(len(user_tuple)):
+  found=False
+  # Check if this element has already appeared
+  for j in range(i):
+    if user_tuple[i]==user_tuple[j]:
+      found=True
+      break
+  if found==False:
+    count=0
 
+    for k in range(len(user_tuple)):
+      if user_tuple[i]==user_tuple[k]:
+        count+=1
+
+    print(user_tuple[i]," = ",count)
 
 
 #Reverse a Dictionary
@@ -148,7 +163,7 @@ print(user_input)"""
 
 # or
 
-def bubble_sort(numbers):
+"""def bubble_sort(numbers):
   n=len(numbers)
   for i in range(n-1):
     for j in range(i+1,n):
@@ -157,3 +172,4 @@ def bubble_sort(numbers):
   return numbers
 user_input=list(map(int,input("Enter the Elements: ").split()))
 print(bubble_sort(user_input))
+"""

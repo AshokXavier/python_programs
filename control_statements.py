@@ -5,7 +5,7 @@ for variable in sequence:
 for variable in range(start,stop,skip):
   code to be executed
   
-start- deaultvalue is 0
+start- defaultvalue is 0
 stop - number-1
 skip - default 1(for +ve numbers)
 
