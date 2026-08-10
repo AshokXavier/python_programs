@@ -157,3 +157,18 @@ for i in range(5):
   for j in range(5):
     print(chr(65 + j),end=" ")
   print()
+
+#Floyd's Triangle
+num=1
+for i in range(5):
+  for j in range(i+1):
+    print(num,end=" ")
+    num+=1
+  print()
+  
+num=0
+for i in range(5):
+  for j in range(i+1):
+    print(chr(65+num),end=" ")
+    num+=1
+  print()
