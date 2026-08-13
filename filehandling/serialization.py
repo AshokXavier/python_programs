@@ -1,3 +1,4 @@
+"""
 import json
 
 student={
@@ -16,4 +17,24 @@ with open("student.json","r") as file:
 
 print(data)
 print(type(data))
-print(data["skills"])         
+print(data["skills"])  
+
+ """
+
+#Serialization using pickle
+import pickle
+
+student={
+  "name":"ashok",
+  "age":22,
+  "skills":["python","HTML"]
+}    
+
+with open("student.pkl","wb") as file:
+  pickle.dump(student,file)
+
+with open("student.pkl","rb") as file:
+  data=pickle.load(file)
+
+print(data)
+print(data["skills"])
