@@ -54,7 +54,8 @@ student2=Student("john",20)
 student1.display()
 student2.display()"""
 
-"""#use of variable inside a name
+"""
+#use of variable inside a name
 class Employees:
   company="abc-company" #class attribute
   def __init__(self,empl_name):
