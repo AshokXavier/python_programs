@@ -177,7 +177,7 @@ c=Child()
 c.show_bike()
 c.show_car()
 c.show_grandparent()
-print(c.house)"""
+print(c.house)
 
 class GrandParent:
 
@@ -195,8 +195,189 @@ class Child(Parent):
 
   def show_bike(self):
     super().show_car()
-    print("Hello")
+    print("Hello3")
 
 c=Child()
 c.show_bike()
+c.show_car()
 
+
+
+class Animal:
+  def __init__(self,name):
+    self.name=name
+    print(self.name)
+
+  def sound(self):
+    print("Some Sound")
+
+class Dog(Animal):
+  def __init__(self,name, breed):
+    super().__init__(name)
+    self.breed=breed
+    print(self.breed)
+
+  def speak(self):
+    super().sound()
+    print("Woof")
+
+d=Dog("Bruno","Labrador")
+d.speak()
+
+
+# or
+
+class Animal:
+  def __init__(self,name):
+    self.name=name
+    print(self.name)
+
+  def sound(self):
+    print("Some Sound")
+
+class Dog(Animal):
+  def __init__(self,breed):
+    super().__init__("Bruno")
+    self.breed=breed
+    print(self.breed)
+
+  def speak(self):
+    super().sound()
+    print("Woof")
+
+d=Dog("Labrador")
+d.speak()
+
+
+#multipele inheritance
+class Father:
+  def house(self):
+    print("Fathers House")
+
+class Mother:
+  def car(self):
+    print("Mothers Car")
+
+class Child(Father,Mother):
+  pass
+
+c=Child()
+c.car()
+c.house()
+
+class Father:
+  def __init__(self,house):
+    self.house=house
+    print("Fathers House: ",self.house)
+class Mother:
+  def __init__(self,car):
+    self.car=car
+    print("Mothers Car : ",self.car)
+
+class Child(Father,Mother):
+  def __init__(self):
+    Father.__init__(self,"ABC")
+    Mother.__init__(self,"BMW")
+
+
+c=Child()
+
+
+#Heirarchical Inheritance
+class Animal:
+  def __init__(self,name):
+    self.name=name
+    print(f"Animal name:{self.name}")
+
+  def eat(self):
+    print(f"{self.name} is eating")
+
+class Dog(Animal):
+  def __init__(self, name,breed):
+    Animal.__init__(self,name)
+    Animal.eat(self)
+    self.breed=breed
+    print(f"Dog breed: {self.breed}")
+
+  def bark(self):
+    print(f"{self.name} is barking")
+class Cat(Animal):
+  def __init__(self, name,color):
+    Animal.__init__(self,name)
+    Animal.eat(self)
+    self.color=color
+    print(f"Cat color: {self.color}")
+  def meow(self):
+    print(f"Cat name: {self.name}")
+
+d=Dog("Tomy","Lab")
+d.bark()
+c=Cat("kitty","white")
+c.meow()
+
+
+class Person:
+  def show_name(self,name):
+    self.name=name
+    print(self.name)
+  
+class Student(Person):
+  def study(self):
+    print("Student is Studying")
+
+class Sports:
+  def play(self):
+    print("Student plays football")
+
+class sports_student(Student,Sports):
+  def attend_competition(self):
+    print("Student attemps competition")
+
+s1=sports_student()
+s1.show_name("ashok")
+s1.attend_competition()
+s1.study()
+s1.attend_competition()
+
+
+
+class Dog:
+  def speak(self):
+    print("Dog is eating")
+class Cat:
+  def speak(self):
+    print("Cat is eating" )
+class Cow:
+  def speak(self):
+    print("Cow is eating" )
+
+animal=[Dog(),Cat(),Cow()]
+for a in animal:
+  a.speak()
+"""
+
+class CreditCard:
+    def pay(self, amount):
+        print(f"Paid ₹{amount} using Credit Card")
+
+
+class UPI:
+    def pay(self, amount):
+        print(f"Paid ₹{amount} using UPI")
+
+
+class CashOnDelivery:
+    def pay(self, amount):
+        print(f"Pay ₹{amount} when product is delivered")
+
+
+class Order:
+    def checkout(self, payment_method, amount):
+        payment_method.pay(amount)
+
+
+order = Order()
+
+order.checkout(CreditCard(), 1000)
+order.checkout(UPI(), 750)
+order.checkout(CashOnDelivery(), 500)
