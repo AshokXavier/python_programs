@@ -354,7 +354,7 @@ class Cow:
 animal=[Dog(),Cat(),Cow()]
 for a in animal:
   a.speak()
-"""
+
 
 class CreditCard:
     def pay(self, amount):
@@ -381,3 +381,121 @@ order = Order()
 order.checkout(CreditCard(), 1000)
 order.checkout(UPI(), 750)
 order.checkout(CashOnDelivery(), 500)
+
+
+
+#Problems
+#1
+class Vehicle:
+  def __init__(self,brand,speed):
+    self.brand=brand
+    self.speed=speed
+
+class Car(Vehicle):
+  def __init__(self, brand, speed,doors):
+    self.doors=doors
+    super().__init__(brand,speed)
+
+  def display(self):
+    print(f"Brand: {self.brand}\nSpeed: {self.speed}\nDoors: {self.doors}")
+
+c=Car("BMW",100,4)
+c.display() 
+
+#2
+class Employee:
+  def __init__(self,name,salary):
+    self.name=name
+    self.salary=salary
+
+class Developer(Employee):
+  def __init__(self, name, salary):
+    super().__init__(name, salary)
+  def calaculate_bonus(self):
+    self.salary=self.salary+(self.salary/100*5)
+
+
+
+#Method Overriding
+class Parent:
+  def show_name(self):
+    print("My name is ashok")
+
+class Child(Parent):
+  def show_name(self):
+    print("Hello")
+
+c=Child()
+c.show_name()
+
+
+#Encapsulation
+
+class Student:
+  def __init__(self,name,mark):
+    self.name=name
+    self.__mark=mark
+
+  def get_mark(self):
+    return self.__mark
+  def set_mark(self,mark):
+    if mark>=0 and mark<=100:
+      self.__mark=mark
+      return self.__mark
+
+
+s=Student("ashok",85)
+s1=Student("david",90)
+print("Name: ",s.name)
+print("Mark: ",s.get_mark())
+print(s.set_mark(95))
+# print(s.__mark) it will show error bcoz it is encapsulted data
+print("Mark: ",s1.get_mark())
+print(s.set_mark(105))
+
+#Abstraction
+from abc import ABC,abstractmethod
+
+class Animal(ABC):
+  @abstractmethod
+  def sound(self):
+   pass
+class Dog(Animal):
+  def sound(self):
+    print("Dog barks")
+
+class Cat(Animal):
+  def sound(self):
+    print("Meow")
+
+c=Cat()
+c.sound()
+d=Dog()
+d.sound()
+a=Animal()
+
+
+
+#Method Types
+
+#1selfMethod
+#2classMethod
+class Student:
+  mark=90
+  @classmethod
+  def change_mark(cls,mark):  #cls - refers to class itself
+    cls.mark=mark
+    return cls.mark
+
+s1=Student()
+print(s1.change_mark(100))
+print(s1.mark)
+
+#3StaticMethod
+class Student:
+  @staticmethod
+  def college_name():
+    print("ABC College")
+Student.college_name()
+
+"""
