@@ -498,4 +498,219 @@ class Student:
     print("ABC College")
 Student.college_name()
 
+
+class Calculator:
+  def add(self,a,b):
+    print(a+b)
+  def add(self,a,b,c):
+    print(a+b+c)
+
+a1=Calculator()
+a1.add(20,30,40)
+# a1.add(20,30) not possible in python
+#so
+class Calculator:
+  def add(self,a,b,c=0):
+    print(a+b+c)
+
+a1=Calculator()
+a1.add(20,30,40)
+a1.add(20,30) 
+
+
+#Operator Overloading
+class Student:
+  def __init__(self,mark):
+    self.mark=mark
+
+  def __add__(self,other):
+    return self.mark+other.mark
+
+s1=Student(80)
+s2=Student(85)
+result=s1+s2
+print(result)
+
+class Student:
+  def __init__(self,mark):
+    self.mark=mark
+  def __sub__(self,other):
+    return self.mark-other.mark
+
+s1=Student(90)
+s2=Student(80)
+result=s1-s2
+print(result)
+
+class Student:
+  def __init__(self,mark):
+    self.mark=mark
+  def __mul__(self,other):
+    return self.mark*other.mark
+
+s1=Student(10)
+s2=Student(2)
+result=s1*s2
+print(result)
+
+class Student:
+  def __init__(self,mark):
+    self.mark=mark
+  def __truediv__(self,other):
+    return self.mark/other.mark
+
+s1=Student(90)
+s2=Student(80)
+result=s1/s2
+print(result)
+
+
+class Student:
+  def __init__(self,mark):
+    self.mark=mark
+  def __floordiv__(self,other):
+    return self.mark//other.mark
+
+s1=Student(90)
+s2=Student(80)
+result=s1//s2
+print(result)
+
+class Student:
+  def __init__(self,mark):
+    self.mark=mark
+  def __mod__(self,other):
+    return self.mark%other.mark
+
+s1=Student(10)
+s2=Student(3)
+result=s1%s2
+print(result)
+
+class Student:
+  def __init__(self,mark):
+    self.mark=mark
+  def __pow__(self,other):
+    return self.mark**other.mark
+
+s1=Student(2)
+s2=Student(3)
+result=s1**s2
+print(result)
+
+class Student:
+  def __init__(self,mark):
+    self.mark=mark
+  def __eq__(self,other):
+    return self.mark==other.mark
+
+s1=Student(90)
+s2=Student(80)
+result=s1==s2
+print(result)
+
+class Student:
+  def __init__(self,mark):
+    self.mark=mark
+  def __ne__(self,other):
+    return self.mark!=other.mark
+
+s1=Student(90)
+s2=Student(80)
+result=s1!=s2
+print(result)
+
+class Student:
+  def __init__(self,mark):
+    self.mark=mark
+  def __lt__(self,other):
+    return self.mark<other.mark
+
+s1=Student(90)
+s2=Student(80)
+result=s1<s2
+print(result)
+
+class Student:
+  def __init__(self,mark):
+    self.mark=mark
+  def __gt__(self,other):
+    return self.mark>other.mark
+
+s1=Student(90)
+s2=Student(80)
+result=s1>s2
+print(result)
+
+class Student:
+  def __init__(self,mark):
+    self.mark=mark
+  def __le__(self,other):
+    return self.mark<=other.mark
+
+s1=Student(90)
+s2=Student(80)
+result=s1<=s2
+print(result)
+
+
+class Student:
+  def __init__(self,mark):
+    self.mark=mark
+  def __ge__(self,other):
+    return self.mark>=other.mark
+
+s1=Student(90)
+s2=Student(80)
+result=s1>=s2
+print(result)
 """
+
+"""
+#Iterator
+numbers=[10,20,30,40] #Iterable: iter(),
+
+# for i in numbers:
+#   print(i)
+
+
+a=iter(numbers) # a is an iter
+# print(a)
+print(next(a))
+print(next(a))
+
+#Generators in python
+def num():
+  yield 1
+  yield 2
+  yield 3
+
+a=num()
+print(next(a))
+print(next(a))
+
+def num():
+  return 1
+  return 2 #doesnot work
+  return 3
+
+a=num()
+print(a)
+"""
+
+#Decarator
+
+
+def message(func):
+  def wrapper():
+    print("Good Morning")
+    func()
+    print("Ashok")
+
+  return wrapper
+
+@message
+def hello():
+  print("Hello")
+
+hello()
