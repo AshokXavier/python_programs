@@ -35,4 +35,17 @@ try:
 except FileNotFoundError:
   print("File not Found")
 """
+#Reraise
+def check_mark(mark):
+  try:
+    if mark<0:
+      raise ValueError("Mark cannot be negative")
+    print("Valid mark",mark)
+  except ValueError:
+    print("Error Found")
+    raise
 
+try:
+  check_mark(-10)
+except:
+  print("Plese enter a valid mark")
