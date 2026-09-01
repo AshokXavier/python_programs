@@ -1,0 +1,15 @@
+#Duck typing
+class Dog:
+  def speak(self):
+    print("Dog is barking")
+
+class Cat:
+  def speak(self):
+    print("Meow")
+
+def make_sound(animal):
+  animal.speak()
+d1=Dog()
+c1=Cat()
+make_sound(d1)
+make_sound(c1)
