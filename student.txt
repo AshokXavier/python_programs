@@ -1,0 +1,3 @@
+Name: ash
+Age: 22
+Mark: 85
