@@ -10,6 +10,6 @@ print(b)
 var=[10,18,21,25]
 age_status={age:"adult" if age>=18 else "minor" for age in var}
 print(age_status)
-
 """
+
 

@@ -1,0 +1,8 @@
+10
+20
+hello
+30
+python
+40
+
+Hello Python 123

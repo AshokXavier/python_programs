@@ -1,4 +1,4 @@
-"""#Exception Handling 
+#Exception Handling 
 #1
 try:
   a=10
@@ -108,7 +108,7 @@ except InvalidMarkError as e:
 
 except ValueError:
   print("Please enter a valid number")
-  """
+  
 
 
 
@@ -193,3 +193,62 @@ if os.path.exists(filename):
    print("File exists.") 
 else: 
   print("File does not exist.")
+
+
+#13
+
+with open("sample3.txt","r") as file:
+  content=file.read()
+values=content.split()
+total=0
+count=0
+for value in values:
+  try:
+    total+=int(value)
+    count+=1
+  except ValueError:
+    pass
+
+if count>0:
+  avg=total/count
+  print("Sum is: ",total)
+  print("Average is: ,",avg)
+else:
+  print("No numbers Found")
+
+
+#14
+with open("sample4.txt","r") as file:
+  text=file.read()
+
+vowels=0
+consonants=0
+digits=0
+spaces=0
+
+for ch in text:
+  if ch.lower() in "aeiou":
+    vowels+=1
+  elif ch.isalpha():
+    consonants+=1
+  elif ch.isdigit():
+    digits+=1
+  elif ch==" ":
+    spaces+=1
+
+print("Vowels:", vowels) 
+print("Consonants:", consonants) 
+print("Digits:", digits) 
+print("Spaces:", spaces)
+
+#15
+with open("sample3.txt") as file1:
+  data1=file1.read()
+
+with open("sample4.txt") as file2:
+  data2=file2.read()
+
+with open("sample5.txt","w") as file3:
+  file3.write(data1)
+  file3.write("\n")
+  file3.write(data2)
